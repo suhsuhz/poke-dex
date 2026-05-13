@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-    title: '포켓몬 도감 with Cursor',
-    description: '포켓몬 도감 with Cursor',
+    title: '포켓몬 도감',
+    description: '포켓몬 도감 with Cursor, Next.js',
 };
 
 export default function RootLayout({
