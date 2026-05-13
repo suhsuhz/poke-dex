@@ -106,7 +106,7 @@ export default function Header() {
                     : 'border-b border-transparent'
             }`}
         >
-            <div className='mx-auto flex w-full max-w-screen-2xl flex-col gap-10 px-4 py-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:px-8 lg:px-14 xl:px-20 mb-5'>
+            <div className='mx-auto flex w-full max-w-screen-2xl flex-col gap-10 px-4 py-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:px-8 lg:px-14 xl:px-20 mb-3'>
                 <div className='w-full sm:w-auto'>
                     <PokemonLogoText size='md' />
                 </div>
@@ -121,6 +121,10 @@ export default function Header() {
                     />
                 )}
             </div>
+            {/* 기술 스택 안내 — 본문과 구분되는 아주 작은 보조 텍스트 */}
+            <p className='mx-auto max-w-screen-2xl px-4 pb-3 text-center text-[11px] leading-relaxed text-slate-400 sm:px-8 lg:px-14 xl:px-20'>
+                사용기술: Cursor, React, Next.js, Tailwind CSS
+            </p>
         </header>
     );
 }
