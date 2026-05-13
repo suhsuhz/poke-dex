@@ -1,26 +1,120 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --background: #ffffff;
+    --foreground: #171717;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-black: #0f172a;
+    --color-pokemon-name: #f59e0b;
+    --text-pokemon-name-size: 1rem;
+    --text-pokemon-type-size: 0.875rem;
+    --font-sans: var(--font-geist-sans);
+    --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+    :root {
+        --background: #0a0a0a;
+        --foreground: #ededed;
+    }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    margin: 0 auto;
+    padding: 0;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.pokemon-logo-text {
+    font-weight: 900;
+    font-style: italic;
+    line-height: 1;
+    letter-spacing: 0.03em;
+    color: #f7d51d;
+    -webkit-text-stroke: 3px #2e61b8;
+    text-shadow:
+        1px 1px 0 #1f4699,
+        2px 2px 0 #1f4699,
+        3px 3px 0 #1f4699;
+    transform: skewX(-8deg) rotate(-2deg);
+}
+
+.pokemon-logo-text--sm {
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    -webkit-text-stroke: 2px #2e61b8;
+}
+
+.pokemon-logo-text--md {
+    font-size: clamp(1.7rem, 3.6vw, 2.4rem);
+    -webkit-text-stroke: 3px #2e61b8;
+}
+
+.pokemon-logo-text--lg {
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    -webkit-text-stroke: 3.5px #2e61b8;
+}
+
+.pokemon-type-select {
+    appearance: none;
+    border: none;
+    background: transparent;
+    padding: 0 1rem 0 0;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #0f172a;
+    outline: none;
+    cursor: pointer;
+}
+
+.poke-go-badge {
+    position: absolute;
+    top: 50%;
+    right: 0.35rem;
+    z-index: 10;
+    transform: translateY(-50%) skewX(-8deg);
+    border: 0;
+    border-radius: 9999px;
+    padding: 0.24rem 0.9rem;
+    background: linear-gradient(180deg, #0d3f8f 0%, #0a2f6b 100%);
+    color: #f8d825;
+    font-size: 1rem;
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    text-shadow: 1px 1px 0 #1f4699;
+    box-shadow:
+        0 1px 0 #1f4699,
+        inset 0 0 0 2px #80b0ff;
+    cursor: pointer;
+    pointer-events: auto;
+    user-select: none;
+    transition:
+        transform 0.16s ease,
+        filter 0.16s ease,
+        box-shadow 0.16s ease,
+        background-color 0.16s ease;
+}
+
+.poke-go-badge:hover {
+    filter: brightness(1.08);
+    transform: translateY(calc(-50% - 1px)) skewX(-8deg);
+}
+
+.poke-go-badge:active {
+    transform: translateY(calc(-50% + 1px)) skewX(-8deg);
+    box-shadow:
+        0 0 0 #1f4699,
+        inset 0 0 0 2px #80b0ff;
+}
+
+.poke-go-badge:focus-visible {
+    outline: 2px solid #60a5fa;
+    outline-offset: 1px;
 }
